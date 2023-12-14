@@ -2,50 +2,50 @@
 //Создайте функцию makeOne которая записывает в Local Storage ключ games со значением 11. Вызывается функция по кнопке Задание 1.
 
 function makeOne() {
-	//Ваш код
+	localStorage.setItem('games', '11');
+	console.log('ключ со значением 11');
 }
-
-//добавьте слушатель события
+document.querySelector('.b-1').onclick = makeOne; //добавьте слушатель события
 
 //Задание 2
 //Создайте функцию makeTwo, которая сохраняет в Local Storage строку "7,6,5". Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 2.
 
 function makeTwo() {
-	//Ваш код
+	localStorage.setItem('string', '7, 6, 5');
 	console.log('Строка "7,6,5" была записана в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-2').onclick = makeTwo;
 
 //Задание 3
 //Создайте функцию makeThree, которая сохраняет в Local Storage строку "name=John, age=25". Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 3.
 
 function makeThree() {
-	//Ваш код
+	localStorage.setItem('data', 'name-John, age=25');
 	console.log('Строка "name=John, age=25" была записана в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-3').onclick = makeThree;
 
 //Задание 4
 //Создайте функцию makeFour, которая сохраняет в Local Storage логическое значение true. Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 4.
 
 function makeFour() {
-	//Ваш код
+	localStorage.setItem('boolean', 'true');
 	console.log('Логическое значение true было записано в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-4').onclick = makeFour;
 
 //Задание 5
 //Создайте функцию makeFive, которая сохраняет в Local Storage значение null. Ключ задайте самостоятельно. Вызывается функция по кнопке Задание 5.
 
 function makeFive() {
-	//Ваш код
+	localStorage.setItem('value', 'null');
 	console.log('Значение null было записано в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-5').onclick = makeFive;
 
 //Задание 6
 //Создайте функцию makeSix, которая сохраняет в Local Storage по ключу objectSix объект obj = { name: "Алиса", age: 30 }. Вызывается функция по кнопке Задание 6.
