@@ -52,11 +52,15 @@ document.querySelector('.b-5').onclick = makeFive;
 //Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
 
 function makeSix() {
-	//Ваш код
+	const obj = {
+		name: 'Алиса',
+		age: 30
+	};
+	localStorage.setItem('objectSix', JSON.stringify(obj));
 	console.log('Объект obj был записан в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-6').onclick = makeSix;
 
 //Задание 7
 //Создайте функцию makeSeven, которая сохраняет в Local Storage по ключу objectSeven объект obj = {
@@ -68,11 +72,17 @@ function makeSix() {
 //Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
 
 function makeSeven() {
-	//Ваш код
+	const obj7 = {
+		city: "Лондон",
+        country: "Великобритания",
+        population: 8900000,
+        language: "английский"
+	};
+	localStorage.setItem('objectSeven', JSON.stringify(obj7));
 	console.log('Объект obj был записан в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-7').onclick = makeSeven;
 
 //Задание 8
 //Создайте функцию makeEight, которая сохраняет в Local Storage по ключу objectEight объект obj = {
@@ -84,33 +94,41 @@ function makeSeven() {
 //Подсказка: Для преобразования объекта в строку используйте метод JSON.stringify()
 
 function makeEight() {
-	//Ваш код
+	const obj8 = {
+		fruit: "Яблоко",
+		color: "красное",
+		quantity: 10,
+		price: 199
+	};
+	localStorage.setItem('objectEight', JSON.stringify(obj8));
 	console.log('Объект obj был записан в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-8').onclick = makeEight;
 
 //Задание 9
 //Создайте функцию makeNine, которая сохраняет в Local Storage по ключу arrayNine массив arr = [1, 2, 3, 4, 5]. Вызывается функция по кнопке Задание 9.
 //Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
 
 function makeNine() {
-	//Ваш код
+	const arr = [1, 2, 3 , 4, 5];
+	localStorage.setItem('arrayNine', JSON.stringify(arr));
 	console.log('Массив arr был записан в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-9').onclick = makeNine;
 
 //Задание 10
 //Создайте функцию makeTen, которая сохраняет в Local Storage по ключу arrayTen массив arr = ["яблоко", "банан", "апельсин"]. Вызывается функция по кнопке Задание 10.
 //Подсказка: Для преобразования массива в строку используйте метод JSON.stringify()
 
 function makeTen() {
-	//Ваш код
+	const arr10 = ["яблоко", "банан", "апельсин"];
+	localStorage.setItem('arrayTen', JSON.stringify(arr10));
 	console.log('Массив arr был записан в Local Storage.');
 }
 
-//добавьте слушатель события
+document.querySelector('.b-10').onclick = makeTen;~
 
 //Задание 11
 //Создайте функцию makeEleven, которая сохраняет в Local Storage по ключу arrayEleven массив arr = [
