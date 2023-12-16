@@ -9,10 +9,23 @@
     <link rel="stylesheet" href="./styles/skeleton.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Планировщик задач</h1>
-      <input id="planner" placeholder="Добавить задачу" />
-    </div>
+    <h1>Планировщик задач</h1>
+    <form class="container">
+      <div class="task_add">
+        <h3>Добавить задачу</h3>
+        <div class="input_task">
+          <input type="text" class="task" placeholder="Новая задача" />
+          <button class="btn_add">Добавить</button>
+        </div>
+      </div>
+      <div class="task">
+        <h3>Список задач</h3>
+        <div class="task_list">
+          <p class="empty_task">Нет задач</p>
+        </div>
+        <button class="btn_clear">Очистить список задач</button>
+      </div>
+    </form>
     <script src="index2.js"></script>
   </body>
 </html>
