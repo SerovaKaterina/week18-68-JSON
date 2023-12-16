@@ -409,10 +409,11 @@ const getCookie = (name) => {
 		const cookie = cookies[i].split('=');
 		if (cookie[0] === name) {
 			const value = cookie[1] || '';
-			//Ваш код
+			cookieContainer.innerHTML = value;
+			return value;
 		}
 	}
-	//Ваш код
+	
 };
 
 document.querySelector('.b-27').addEventListener('click', () => {
@@ -424,22 +425,23 @@ document.querySelector('.b-27').addEventListener('click', () => {
 //Подсказка: используйте функцию getCookie
 
 const checkCookie = () => {
-	//Ваш код
+	const username = getCookie('username');
 	if (username !== '') {
-		//Ваш код
+		console.log(username)
 	} else {
-		//Ваш код
+		console.log(`Cookie с именем ${username} не найден.`)
 	}
 };
 
-// добавьте слушатель события
+document.querySelector('.b-28').addEventListener('click', checkCookie);
+
 
 //Задание 29
 //Создайте функцию setCookie, которая принимает имя и значение cookie. Функция должна устанавливать cookie с указанным именем и значением. После установки cookie, выведите сообщение в консоль. Вызывается функция по кнопке Задание 29.
 
 const setCookie = (name, value) => {
 	document.cookie = `${name}=${value}`;
-	//Ваш код
+	console.log('Cookie "testCookie" установлена. ')
 };
 
 document.querySelector('.b-29').addEventListener('click', () => {
@@ -448,10 +450,9 @@ document.querySelector('.b-29').addEventListener('click', () => {
 
 //Задание 30
 //Создайте функцию deleteCookie, которая принимает имя cookie. Функция должна удалять cookie с указанным именем. После удаления cookie, выведите сообщение в консоль. Вызывается функция по кнопке Задание 30.
-
 const deleteCookie = (name) => {
 	document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-	//Ваш код
+	console.log('Cookie "name" удалена');
 };
 
 document.querySelector('.b-30').addEventListener('click', () => {
