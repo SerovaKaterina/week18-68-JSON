@@ -283,25 +283,33 @@ let numbers = [];
 const addToNumbers = () => {
 	const numberInput = document.getElementById('numberInput');
 	const number = parseInt(numberInput.value);
-
-	//Ваш код
+    if (isNaN(number)) {
+    alert('Введите число!')
+	} else {
+		numbers.push(number);
+	};
+localStorage.setItem('task19', JSON.stringify(numbers));
 };
 
 document.querySelector('.b-19').addEventListener('click', addToNumbers);
+//Если нажать на кнопку 3 раза, в массиве будет 3 одинаковых элемента с введенным значением
 
 //Задание 20
 //Создайте функцию removeLastElement, которая при вызове удаляет из массива numbers последний элемент. После чего массив сохраняется в Local Storage с ключем task19 (используйте массив из задания 19). Вызывается функция по кнопке Задание 20.
 
 const removeLastElement = () => {
 	if (numbers.length > 0) {
-		//Ваш код
+		let numbers20 = numbers.pop();
+        localStorage.setItem('task19', JSON.stringify(numbers20));
+		
 		console.log('Последний элемент удален из массива numbers и сохранен в Local Storage.');
 	} else {
 		console.log('Массив numbers пуст.');
 	}
 };
 
-//добавьте слушатель события
+document.querySelector('.b-20').addEventListener('click', removeLastElement);
+
 
 //Задание 21
 //Создайте функцию addToCart, которая при нажатии кнопки Задание 21 получает из Local Storage сохранённый массив cartItems. Затем добавляет новый элемент в массив, представляющий товар, введённый вами в поле ввода. Массив cartItems должен сохраняться в Local Storage с ключом task21. Вызывается функция по кнопке Задание 21.
@@ -312,10 +320,11 @@ const addToCart = () => {
 	const product = productInput.value;
 
 	if (product.trim() !== '') {
-		let cartItems = LocalStorage.getItem('cartItems');
+		let cartItems = localStorage.getItem('cartItems');
 		cartItems = cartItems ? JSON.parse(cartItems) : []; //код из подсказки
 
-		//Ваш код
+		cartItems.push(product);
+		localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
 		console.log(`Товар "${product}" добавлен в корзину и сохранен в Local Storage.`);
 	} else {
@@ -330,7 +339,14 @@ document.querySelector('.b-21').addEventListener('click', addToCart);
 //Подсказка: необходимо проверить, существует ли значение и не является ли оно пустым. Это может вызвать ошибку, если cartItems не существует в Local Storage или является пустым.
 
 const removeFromCart = () => {
-	//Ваш код
+	let cartItems = localStorage.getItem('cartItems');
+    cartItems = cartItems ? JSON.parse(cartItems) : [];
+	if(cartItems.length > 0) {
+		cartItems.pop();
+		localStorage.setItem('cartItems', JSON.stringify(cartItems));
+	} else {
+		console.log('Массив пустой')
+	}
 };
 
 document.querySelector('.b-22').addEventListener('click', removeFromCart);
@@ -339,7 +355,15 @@ document.querySelector('.b-22').addEventListener('click', removeFromCart);
 //Создайте функцию showCart, которая при нажатии кнопки Задание 23 получает из Local Storage сохранённый массив cartItems. Выведите элементы массива в элемент с классом practicum23. Вызывается функция по кнопке Задание 23.
 
 const showCart = () => {
-	//Ваш код
+	let newItems = localStorage.getItem('cartItems');
+	//console.log(newItems);
+	const task23 = document.querySelector('.practicum23');
+	newItems = newItems ? JSON.parse(newItems) : [];
+	newItems.forEach(element => {
+		let newData = document.createElement('div');
+		newData.textContent = element;
+		task23.after(newData);
+	});
 };
 
 document.querySelector('.b-23').addEventListener('click', showCart);
@@ -348,7 +372,12 @@ document.querySelector('.b-23').addEventListener('click', showCart);
 //Создайте функцию updateCartCount, которая при нажатии кнопки Задание 24 обновляет количество товаров в корзине. Получите из Local Storage сохранённый массив cartItems и выведите количество товаров в элемент с классом practicum24 (например: "Количество товаров в корзине 3"). Вызывается функция по кнопке Задание 24.
 
 const updateCartCount = () => {
-	//Ваш код
+	let newItems = localStorage.getItem('cartItems');
+	const task24 = document.querySelector('.practicum24');
+	newItems = newItems ? JSON.parse(newItems) : [];
+	let count = newItems.length;
+	task24.textContent = `Количество товаров в корзине ${count}`;
+
 };
 
 document.querySelector('.b-24').addEventListener('click', updateCartCount);
@@ -357,7 +386,7 @@ document.querySelector('.b-24').addEventListener('click', updateCartCount);
 //Создайте функцию clearCart, которая при нажатии кнопки Задание 25 очищает весь массив cartItems в Local Storage. Вызывается функция по кнопке Задание 25.
 
 const clearCart = () => {
-	//Ваш код
+	localStorage.removeItem('cartItems');
 	console.log('Корзина очищена.');
 };
 
@@ -367,6 +396,7 @@ document.querySelector('.b-25').addEventListener('click', clearCart);
 //При загрузке страницы установите cookie с именем "username" и значением "Кот Учёный". Выведите сообщение в консоль, подтверждающее успешное создание cookie.
 
 //Ваш код
+document.cookie = "username = Кот Ученый";
 console.log("Cookie 'username' установлен.");
 
 //Задание 27
