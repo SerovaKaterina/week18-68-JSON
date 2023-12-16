@@ -396,7 +396,7 @@ document.querySelector('.b-25').addEventListener('click', clearCart);
 //При загрузке страницы установите cookie с именем "username" и значением "Кот Учёный". Выведите сообщение в консоль, подтверждающее успешное создание cookie.
 
 //Ваш код
-document.cookie = "username = Кот Ученый";
+document.cookie = "username = Кот ученый";
 console.log("Cookie 'username' установлен.");
 
 //Задание 27
